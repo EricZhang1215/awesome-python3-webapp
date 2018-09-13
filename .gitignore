@@ -1,0 +1,8 @@
+.idea
+self-service.iml
+target/
+.classpath
+.project
+.settings/
+/src/test/java/com/fit2cloud/selfservice/test/GeneratorUtil.java
+.DS_Store
