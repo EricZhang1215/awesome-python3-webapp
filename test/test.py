@@ -3,7 +3,7 @@ from www.models import User, Blog, Comment
 import asyncio
 
 async def test(loop):
-    await www.orm.create_pool(loop,user='root', password='root', database='awesome')
+    await www.orm.create_pool(loop,user='root', password='root', db='awesome')
 
     u = User(name='Test', email='test@example.com', passwd='1234567890', image='about:blank')
 
@@ -12,7 +12,7 @@ async def test(loop):
     await u.save()
 
 async def find(loop):
-    await www.orm.create_pool(loop, user='root', password='root', database='awesome')
+    await www.orm.create_pool(loop, user='root', password='root', db='awesome')
     rs = await User.findAll()
     print('查找测试： %s' % rs)
 
