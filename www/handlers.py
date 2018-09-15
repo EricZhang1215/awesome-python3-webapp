@@ -23,3 +23,11 @@ def index(request):
         '__template__': 'blogs.html',
         'blogs': blogs
     }
+
+#只要返回一个dict，后续的response这个middleware就可以把结果序列化为JSON并返回。
+@get('/api/users')
+def api_get_users():
+    users = yield from User.findAll(orderBy='created_at desc')
+    for u in users:
+        u.passwd = '******'
+    return dict(users=users)
